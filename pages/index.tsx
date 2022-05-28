@@ -1,9 +1,30 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { getSortedPostsData } from "../lib/posts";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+interface PostData {
+  id: string;
+  title: string;
+  date: string;
+}
+
+interface HomeProps {
+  allPostsData: Array<PostData>;
+}
+
+export default function Home(props: HomeProps) {
+  const { allPostsData } = props;
   return (
     <div className={styles.container}>
       <Head>
@@ -17,13 +38,28 @@ export default function Home() {
           <Link href="/posts/first-post">This is Navigation in Next</Link>
         </h1>
         <h1 className="flex items-center mt-9">
-          Hello  <a href="https://nextjs.org">Next.js!</a>
+          Hello <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
         <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
+
+        <section className="m-auto flex flex-col items-center">
+          <div className="font-bold text-xl">Blog</div>
+          <ul className="list-none">
+            {allPostsData.map(({ id, title, date }) => (
+              <li key={id} className="m-4">
+                {title}
+                <br />
+                {id}
+                <br />
+                {date}
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
