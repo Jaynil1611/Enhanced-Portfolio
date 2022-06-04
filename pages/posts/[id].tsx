@@ -5,6 +5,7 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 
 // Calling an api e.g /hello won't be possible inside getStaticPaths or getStaticProps 
 // since at build time it won't know /hello endpoint is existing.
+
 export async function getStaticPaths() {
   // Return array of paths which have params as key in each path to getStaticProps
   const paths = getAllPostIds();
