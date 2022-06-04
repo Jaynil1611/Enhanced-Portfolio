@@ -4,12 +4,17 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
+interface PostData {
+  id: string;
+  date: string;
+}
+
 const postsDirectory = path.join(process.cwd(), "posts");
 
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
+  const allPostsData: Array<PostData> = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
 
@@ -23,6 +28,7 @@ export function getSortedPostsData() {
     // Combine the data with the id
     return {
       id,
+      date: "",
       ...matterResult.data,
     };
   });
