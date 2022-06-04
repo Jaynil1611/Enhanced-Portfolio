@@ -51,7 +51,9 @@ export default function Home(props: HomeProps) {
           <ul className="list-none">
             {allPostsData.map(({ id, title, date }) => (
               <li key={id} className="m-4">
-                {title}
+                <Link href={`/posts/${id}`}>
+                  <a>{title}</a>
+                </Link>
                 <br />
                 {id}
                 <br />
