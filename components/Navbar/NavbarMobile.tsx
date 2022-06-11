@@ -13,7 +13,7 @@ const NavbarMobile = () => {
         active ? "top-0 bottom-0" : ""
       } bg-white w-full fixed z-10 sm:hidden`}
     >
-      <div className="bg-white flex flex-col">
+      <div className="flex flex-col">
         <div
           onClick={handleNavbarToggle}
           className="w-full flex justify-end p-4 transition-all"
@@ -48,14 +48,14 @@ const NavbarMobile = () => {
 
 const NavbarContent = () => {
   return (
-    <div className="w-full mt-4 flex justify-center bg-white">
-      <ul className="flex flex-col">
+    <div className="w-full mt-4 flex justify-center">
+      <ul className="flex flex-col p-0 m-0">
         {navData.map((data) => {
           const { name, component, route } = data;
           return (
-            <li key={name} className="list-none">
+            <li key={name} className="list-none m-4 text-xl font-bold">
               <Link href={route}>
-                <a>{component}</a>
+                <a className="no-underline">{component}</a>
               </Link>
             </li>
           );
