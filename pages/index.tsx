@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import NavbarMobile from "../components/Navbar/NavbarMobile";
+import Timeline from "../components/Timeline/Timeline";
 
 export default function Home() {
   return (
@@ -12,89 +13,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="relative m-auto">
-        <div className="max-w-4xl m-auto">
+      <main className="">
+        <div className="relative max-w-4xl m-auto">
           <NavbarMobile />
-          <div className="relative top-20">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam fuga
-            ab dolores quos harum blanditiis dolor, esse reiciendis, provident
-            doloremque totam, officia nisi ipsa. Natus placeat recusandae libero
-            explicabo odit! Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Ipsam fuga ab dolores quos harum blanditiis dolor, esse
-            reiciendis, provident doloremque totam, officia nisi ipsa. Natus
-            placeat recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ipsam fuga ab dolores quos harum
-            blanditiis dolor, esse reiciendis, provident doloremque totam,
-            officia nisi ipsa. Natus placeat recusandae libero explicabo
-            odit!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam
-            fuga ab dolores quos harum blanditiis dolor, esse reiciendis,
-            provident doloremque totam, officia nisi ipsa. Natus placeat
-            recusandae libero explicabo odit!
+          <div className="pt-16 m-auto">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt rem
+            nobis iusto nulla repudiandae ipsum! Nesciunt rerum ratione
+            voluptatem, velit at aliquid nisi distinctio sapiente fugiat? Hic
+            fugiat assumenda exercitationem!
           </div>
         </div>
+        <Timeline />
       </main>
     </div>
   );

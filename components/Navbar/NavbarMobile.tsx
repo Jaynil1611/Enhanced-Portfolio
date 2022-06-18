@@ -11,12 +11,12 @@ const NavbarMobile = () => {
     <div
       className={`${
         active ? "top-0 bottom-0" : ""
-      } bg-white w-full fixed z-10 sm:hidden`}
+      } bg-white w-full fixed z-50 sm:hidden`}
     >
       <div className="flex flex-col">
         <div
           onClick={handleNavbarToggle}
-          className="w-full flex justify-end p-4 transition-all"
+          className="w-full flex justify-end p-4"
         >
           {active ? (
             <Image
@@ -35,9 +35,7 @@ const NavbarMobile = () => {
           )}
         </div>
         <div
-          className={`${
-            active ? "opacity-100" : "opacity-0 h-0"
-          } transition-opacity`}
+          className={active ? "block" : "hidden"}
         >
           <NavbarContent />
         </div>
