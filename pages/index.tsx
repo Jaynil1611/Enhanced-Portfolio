@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Card from "../components/Card/Card";
 import NavbarMobile from "../components/Navbar/NavbarMobile";
 import Timeline from "../components/Timeline/Timeline";
 
@@ -13,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="">
+      <main className="h-fit">
         <div className="relative max-w-4xl m-auto">
           <NavbarMobile />
           <div className="pt-16 m-auto">
@@ -22,8 +23,12 @@ export default function Home() {
             voluptatem, velit at aliquid nisi distinctio sapiente fugiat? Hic
             fugiat assumenda exercitationem!
           </div>
+          <Timeline />
+          <div className="flex">
+            <Card />
+            <Card />
+          </div>
         </div>
-        <Timeline />
       </main>
     </div>
   );
