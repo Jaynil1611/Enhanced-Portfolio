@@ -11,7 +11,7 @@ const NavbarMobile = () => {
     <div
       className={`${
         active ? "top-0 bottom-0" : ""
-      } bg-white w-full fixed z-50 sm:hidden`}
+      } bg-white w-full fixed z-50 px-4 shadow-md sm:hidden`}
     >
       <div className="flex flex-col">
         <div
@@ -34,9 +34,7 @@ const NavbarMobile = () => {
             />
           )}
         </div>
-        <div
-          className={active ? "block" : "hidden"}
-        >
+        <div className={active ? "block" : "hidden"}>
           <NavbarContent />
         </div>
       </div>

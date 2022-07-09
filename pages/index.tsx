@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../components/Buttons/Button";
 import Card from "../components/Card/Card";
 import Footer from "../components/Footer/Footer";
+import NavbarDesktop from "../components/Navbar/NavbarDesktop";
 import NavbarMobile from "../components/Navbar/NavbarMobile";
 import Timeline from "../components/Timeline/Timeline";
 
@@ -21,7 +23,8 @@ export default function Home() {
 
       <main className="h-fit">
         <NavbarMobile />
-        <div className="relative px-4 lg:px-0 max-w-4xl m-auto">
+        <div className="px-4 lg:px-0 max-w-4xl m-auto">
+          <NavbarDesktop />
           <div className="pt-16 m-auto">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt rem
             nobis iusto nulla repudiandae ipsum! Nesciunt rerum ratione
@@ -32,6 +35,9 @@ export default function Home() {
           <div className="flex flex-wrap">
             <Card />
             <Card />
+          </div>
+          <div>
+            <Button>Visit Site</Button>
           </div>
           <Footer />
         </div>

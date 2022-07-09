@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import LinkButton from "../Buttons/LinkButton";
 import Tags from "../Tags/Tags";
 
 interface CardProps {}
@@ -43,22 +44,12 @@ const Card = () => {
             order info will be sent to the database.
           </div>
           <div className="flex space-x-4">
-            <Link href="https://github.com/Jaynil1611/Enhanced-Portfolio">
-              <a
-                target="_blank"
-                className="underline text-gray-600 decoration-gray-400 hover:text-gray-800 hover:decoration-gray-800"
-              >
-                Visit Site
-              </a>
-            </Link>
-            <Link href="https://github.com/Jaynil1611/Enhanced-Portfolio">
-              <a
-                target="_blank"
-                className="text-blue-800 decoration-gray-400 hover:text-gray-700 hover:decoration-gray-800"
-              >
-                Source Code
-              </a>
-            </Link>
+            <LinkButton href="https://github.com/Jaynil1611/Enhanced-Portfolio">
+              Visit Site
+            </LinkButton>
+            <LinkButton href="https://github.com/Jaynil1611/Enhanced-Portfolio">
+              Source Code
+            </LinkButton>
           </div>
         </div>
       </div>

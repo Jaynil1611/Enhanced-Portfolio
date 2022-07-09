@@ -15,19 +15,28 @@ body {
 }
 
 @layer components {
-  .timeline__img{
+  .timeline__img {
     @apply w-32 h-32 bg-gray-100 flex justify-center items-center object-cover rounded-full shadow-md border-4 border-solid border-white xs:absolute md:mx-auto md:left-0 md:right-0;
   }
-  .timeline__container{
+  .timeline__container {
     @apply relative pt-2 xs:pt-0 xs:pl-34 md:ml-auto md:w-1/2 md:pl-20;
   }
-  .timeline__container--left{
+  .timeline__container--left {
     @apply md:mr-auto md:ml-0 md:pr-20;
   }
-  .timeline__pointer{
+  .timeline__pointer {
     @apply absolute inset-0 left-14 h-4 w-4 transform rotate-45 bg-white xs:left-34 xs:top-14 md:left-18;
   }
-  .timeline__pointer--left{
+  .timeline__pointer--left {
     @apply md:left-auto md:right-18;
+  }
+  .navbar__item:hover {
+    opacity: 0.6;
+  }
+  .button__transition {
+    transition: border 500ms, background-color 500ms, color 500ms;
+  }
+   .button__transition:hover {
+    @apply bg-gray-700 border-gray-700 text-white
   }
 }
