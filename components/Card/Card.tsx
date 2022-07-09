@@ -19,7 +19,7 @@ const tags = [
 
 const Card = () => {
   return (
-    <div className="p-8 md:w-1/2">
+    <div className="p-4 md:w-1/2">
       <div className="flex flex-col shadow-md border border-gray-200 rounded-md">
         <div>
           <Image
