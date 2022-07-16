@@ -13,25 +13,29 @@ const NavbarMobile = () => {
         active ? "top-0 bottom-0" : ""
       } bg-white w-full fixed z-50 px-4 shadow-md sm:hidden`}
     >
-      <div className="flex flex-col">
-        <div
-          onClick={handleNavbarToggle}
-          className="w-full flex justify-end p-4"
-        >
+      <div className="flex flex-col text-center">
+        <div onClick={handleNavbarToggle} className="w-full flex p-4">
           {active ? (
-            <Image
-              src="https://img.icons8.com/material-outlined/24/undefined/delete-sign.png"
-              alt="close"
-              width="24px"
-              height="24px"
-            />
+            <div className="flex-1 text-right">
+              <Image
+                src="https://img.icons8.com/material-outlined/24/undefined/delete-sign.png"
+                alt="close"
+                width="24px"
+                height="24px"
+              />
+            </div>
           ) : (
-            <Image
-              src="https://img.icons8.com/material-outlined/24/undefined/menu--v3.png"
-              alt="menu"
-              width="24px"
-              height="24px"
-            />
+            <div className="flex flex-1">
+              <div className="flex-1 text-center font-semibold">
+                Jaynil Gaglani
+              </div>
+              <Image
+                src="https://img.icons8.com/material-outlined/24/undefined/menu--v3.png"
+                alt="menu"
+                width="24px"
+                height="24px"
+              />
+            </div>
           )}
         </div>
         <div className={active ? "block" : "hidden"}>

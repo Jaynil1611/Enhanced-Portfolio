@@ -8,6 +8,14 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  min-height: 100vh;
+  position:relative; 
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 150px; /* Set same as footer's height */
 }
 
 * {
@@ -36,7 +44,12 @@ body {
   .button__transition {
     transition: border 500ms, background-color 500ms, color 500ms;
   }
-   .button__transition:hover {
-    @apply bg-gray-700 border-gray-700 text-white
+  .button__transition:hover {
+    @apply bg-gray-700 border-gray-700 text-white;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    height: 150px;
   }
 }

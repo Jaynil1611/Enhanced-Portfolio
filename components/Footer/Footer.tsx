@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className="flex flex-col space-y-8 bottom-0 py-4 md:space-y-0 md:flex-row">
+      <div className="flex footer bottom-0 flex-col max-w-4xl space-y-8 py-4 md:space-y-0 md:flex-row">
         <div className="flex-1 text-center md:text-left">
           {`Let's Connect I'd love if you reached out to me on any of the
           platforms below. Drop me a line and I’ll get back to you ASAP!`}
