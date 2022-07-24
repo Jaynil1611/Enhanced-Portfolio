@@ -1,14 +1,8 @@
 import Image from "next/image";
 import React from "react";
+import { skillsData } from "../common/data";
 import Layout from "../components/Layout";
 import Skills from "../components/Skills/Skills";
-
-const skillsObject = {
-  Languages: ["Javascript", "Javascript"],
-  Languages1: ["Javascript", "Javascript"],
-  Languages2: ["Javascript", "Javascript"],
-  Languages3: ["Javascript", "Javascript"],
-};
 
 const About = () => {
   return (
@@ -36,7 +30,7 @@ const About = () => {
         </header>
       </div>
       <div className="flex flex-col">
-        <Skills skillsObject={skillsObject} />
+        <Skills skillsData={skillsData} />
       </div>
     </Layout>
   );
