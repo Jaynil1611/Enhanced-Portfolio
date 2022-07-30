@@ -18,3 +18,18 @@ export const getFilteredProjectsBasedOnTag = (searchTag: string) => {
     return project.tags.some((tag: string) => tag === searchTag);
   });
 };
+
+export const getTagsFromAllProjects = () => {
+  const all = cardsData.projects.all;
+  const result = Object.values(all).reduce((tagsObj, { tags }) => {
+    tags.forEach((tag: string) => {
+      if (tagsObj[tag]) {
+        tagsObj[tag] += 1;
+      } else {
+        tagsObj[tag] = 1;
+      }
+    });
+    return tagsObj;
+  }, {} as Record<string, number>);
+  return Object.entries(result);
+};

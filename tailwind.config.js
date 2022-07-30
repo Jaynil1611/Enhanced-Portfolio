@@ -21,6 +21,9 @@ module.exports = {
       padding: {
         34: "149px",
       },
+      maxWidth: {
+        12: "200px",
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { navData } from "./data";
 
 const NavbarDesktop = () => {
   return (
@@ -7,26 +8,19 @@ const NavbarDesktop = () => {
       <nav className="flex py-6 justify-between items-center">
         <div>Jaynil Gaglani</div>
         <ul className="flex space-x-8">
-          <li>
-            <Link href="/">
-              <a className="navbar__item">Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about">
-              <a className="navbar__item">About</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a className="navbar__item">Projects</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a className="navbar__item">Work</a>
-            </Link>
-          </li>
+          {navData.map((data) => {
+            const { name, component, route } = data;
+            return (
+              <li
+                key={name}
+                className="list-none m-4 navbar__item"
+              >
+                <Link href={route}>
+                  <a className="no-underline">{component}</a>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </div>

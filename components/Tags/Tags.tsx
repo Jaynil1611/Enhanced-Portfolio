@@ -6,8 +6,10 @@ interface TagsProps {
 
 const Tags = ({ tags }: TagsProps) => {
   return (
-    <ul className="flex flex-wrap items-center">
-      {tags?.map((tag: string) => {
+    <ul
+      className="flex flex-wrap items-center"
+    >
+      {tags?.slice(0, 7).map((tag: string) => {
         return (
           <li
             key={tag}

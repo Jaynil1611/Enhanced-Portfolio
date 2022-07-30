@@ -48,7 +48,7 @@ const NavbarMobile = () => {
 
 const NavbarContent = () => {
   return (
-    <div className="w-full mt-4 flex justify-center">
+    <div className="w-full mt-12 flex justify-center">
       <ul className="flex flex-col p-0 m-0">
         {navData.map((data) => {
           const { name, component, route } = data;
