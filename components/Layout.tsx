@@ -18,7 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
       <NavbarMobile />
       <div className="px-4 lg:px-0 max-w-4xl m-auto">
         <NavbarDesktop />
-        <div className="pt-20 md:pt-6">{children}</div>
+        <div className="pt-20 md:pt-6 mb-48 md:mb-0">{children}</div>
         <Footer />
       </div>
     </>

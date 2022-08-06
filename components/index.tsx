@@ -8,3 +8,5 @@ export { default as NavbarDesktop } from "./Navbar/NavbarDesktop";
 export { default as Skills } from "./Skills/Skills";
 export { default as Tags } from "./Tags/Tags";
 export { default as Timeline } from "./Timeline/Timeline";
+export { default as HeroHeader } from "./HeroHeader/HeroHeader";
+export { default as SectionHeader } from "./SectionHeader/SectionHeader";

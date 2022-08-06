@@ -21,7 +21,7 @@ const Card = ({
   sourceLink,
 }: CardProps) => {
   return (
-    <div className="p-4 w-full md:w-1/2">
+    <div className="py-4 w-full">
       <div className="flex flex-col h-full shadow-md border border-gray-200 rounded-md">
         <div>
           <Image

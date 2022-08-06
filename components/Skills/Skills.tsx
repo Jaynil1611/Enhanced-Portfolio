@@ -14,14 +14,11 @@ interface IndividualSkillProps {
 
 const Skills = ({ skillsData }: SkillsProps) => {
   return (
-    <>
-      <h1 className="text-2xl uppercase font-bold pt-6">Skills</h1>
-      <ul>
-        {Object.keys(skillsData).map((type) => (
-          <SkillType key={type} skillsData={skillsData} type={type} />
-        ))}
-      </ul>
-    </>
+    <ul className="mb-24">
+      {Object.keys(skillsData).map((type) => (
+        <SkillType key={type} skillsData={skillsData} type={type} />
+      ))}
+    </ul>
   );
 };
 
@@ -41,10 +38,7 @@ const IndividualSkill = ({ skillsArray }: IndividualSkillProps) => {
 
 const SkillType = ({ skillsData, type }: SkillTypeProps) => {
   return (
-    <div
-      key={type}
-      className="py-8 border-b border-dashed border-gray-500"
-    >
+    <div key={type} className="py-6 border-b border-dashed border-gray-500">
       <h2 className="text-xl">{type}</h2>
       <ul className="list-disc flex flex-wrap">
         <IndividualSkill skillsArray={skillsData[type]} />

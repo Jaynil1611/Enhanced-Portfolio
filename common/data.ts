@@ -1,18 +1,22 @@
 export const timeLineData = {
   experience: [
     {
-      date: "20 May 2020",
-      title: "Internship",
-      content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
-              nesciunt alias. Cumque velit sequi deleniti blanditiis nesciunt
-              incidunt accusamus tempore mollitia illo laudantium eveniet
-              veritatis, eum delectus asperiores, dolorem quibusdam?`,
+      date: "May 2020 - July 2020",
+      company: "Credit Suisse",
+      title: "Technology Analyst Intern",
+      content: `My project was to build a test assessment platform using React, Redux & Micronaut(JVM). I also developed REST API's to handle requests and give responses.`,
+    },
+    {
+      date: "June 2019 - August 2019",
+      company: "Eatabl",
+      title: "Angular Developer",
+      content: `Eatabl is a food-tech startup based in Mumbai. My work was to design a website using Angular 6 with all functionalities and store the data into Firebase.`,
     },
   ],
   education: [
     {
       date: "June 2021",
-      title: "B.Tech in Information Technology",
+      title: "B.Tech in Information Technology",    
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
@@ -43,8 +47,7 @@ export const featuredProjects = {
     imageLink:
       "https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     title: "Title 2",
-    content:
-      "sfsfd",
+    content: "sfsfd",
     tags: ["HTML", "CSS"],
     demoLink: "https://github.com/Jaynil1611/Enhanced-Portfolio",
     sourceLink: "https://github.com/Jaynil1611/Enhanced-Portfolio",
