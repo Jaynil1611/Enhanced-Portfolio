@@ -19,20 +19,24 @@ export default function Home() {
         <SectionHeader
           heading="Featured Projects"
           description="I enjoy to continue learning to improve my knowledge and to gain a completely new experience. You'll see some of the frontend & backend projects I've accomplished."
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mb-24">
-          {featuredProjects.map((project) => (
-            <Card key={project.title} {...project} />
-          ))}
+        />      
+        <div className="mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mb-6">
+            {featuredProjects.map((project) => (
+              <Card key={project.title} {...project} />
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <Button className="rounded-full" href="/projects">
+              View All Projects
+            </Button>
+          </div>
         </div>
         <SectionHeader
           heading="Work Experience"
           description="I have done internships at Credit Suisse (Technology Analyst) and food-tech startup Eatabl (Angular Developer). Check out more details below."
         />
         <Timeline timeline={timeLineData.experience} />
-        {/* <div className="flex">
-          <Button>Visit Site</Button>
-        </div> */}
       </Layout>
     </main>
   );

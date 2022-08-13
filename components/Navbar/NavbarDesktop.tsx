@@ -6,17 +6,18 @@ const NavbarDesktop = () => {
   return (
     <div className="hidden sm:block">
       <nav className="flex py-6 justify-between items-center">
-        <div>Jaynil Gaglani</div>
-        <ul className="flex space-x-8">
+        <Link href="/">
+          <a>Jaynil Gaglani</a>
+        </Link>
+        <ul className="flex">
           {navData.map((data) => {
-            const { name, component, route } = data;
+            const { name, component, route, target } = data;
             return (
-              <li
-                key={name}
-                className="list-none m-4 navbar__item"
-              >
+              <li key={name} className="list-none m-4 navbar__item">
                 <Link href={route}>
-                  <a className="no-underline">{component}</a>
+                  <a className="no-underline" target={target}>
+                    {component}
+                  </a>
                 </Link>
               </li>
             );
