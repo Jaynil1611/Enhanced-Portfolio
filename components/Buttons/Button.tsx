@@ -1,7 +1,19 @@
 import Link from "next/link";
-import React from "react";
+import React, { ReactNode } from "react";
 
-const Button = ({ children, className = "", href = "", target = "_blank" }) => {
+export interface ButtonProps {
+  children: ReactNode;
+  className?: string;
+  href?: string;
+  target?: string;
+}
+
+const Button = ({
+  children,
+  className = "",
+  href = "",
+  target = "_blank",
+}: ButtonProps) => {
   return (
     <Link href={href}>
       <a

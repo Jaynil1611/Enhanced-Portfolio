@@ -1,12 +1,13 @@
 import Link from "next/link";
 import React from "react";
+import { ButtonProps } from "./Button";
 
 const LinkButton = ({
   children,
   className = "",
   href = "",
   target = "_blank",
-}) => {
+}: ButtonProps) => {
   return (
     <Link href={href}>
       <a
