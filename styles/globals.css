@@ -30,7 +30,7 @@ body::after {
     @apply relative pt-2 xs:pt-0 xs:pl-34 md:ml-auto md:w-1/2 md:pl-20;
   }
   .timeline__container--left {
-    @apply md:mr-auto md:ml-0 md:pr-20;
+    @apply md:mr-auto md:ml-0 md:pl-0 md:pr-20;
   }
   .timeline__pointer {
     @apply absolute inset-0 left-14 h-4 w-4 transform rotate-45 bg-white xs:left-34 xs:top-14 md:left-18;

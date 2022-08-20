@@ -1,3 +1,5 @@
+import { educationImageURL, experienceImageURL } from "../common/constants";
+
 export const timeLineData = {
   experience: [
     {
@@ -5,20 +7,23 @@ export const timeLineData = {
       company: "Credit Suisse",
       title: "Technology Analyst Intern",
       content: `My project was to build a test assessment platform using React, Redux & Micronaut(JVM). I also developed REST API's to handle requests and give responses.`,
+      timelineImageURL: experienceImageURL,
     },
     {
       date: "June 2019 - August 2019",
       company: "Eatabl",
       title: "Angular Developer",
       content: `Eatabl is a food-tech startup based in Mumbai. My work was to design a website using Angular 6 with all functionalities and store the data into Firebase.`,
+      timelineImageURL: experienceImageURL,
     },
   ],
   education: [
     {
       date: "June 2021",
-      title: "B.Tech in Information Technology",    
+      title: "B.Tech in Information Technology",
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      timelineImageURL: educationImageURL,
     },
   ],
 };

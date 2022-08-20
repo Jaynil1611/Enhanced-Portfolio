@@ -1,12 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { timelineImageURL } from "../../common/constants";
+import { experienceImageURL } from "../../common/constants";
 
 interface TimelineData {
   date?: string;
   company?: string;
   title: string;
   content: string;
+  timelineImageURL: string;
 }
 
 interface TimelineProps {
@@ -18,8 +19,8 @@ const Timeline = ({ timeline }: TimelineProps) => {
     <div className="antialiased p-6 bg-gray-100 text-gray-800 mb-28">
       <div className="relative container mx-auto px-6 flex flex-col space-y-8">
         <div className="absolute z-0 inset-0 left-22 bg-white h-full w-2 shadow-md md:mx-auto md:left-0 md:right:0"></div>
-        {timeline?.map((timeline, index) => {
-          const { date, company, title, content } = timeline;
+        {timeline?.map((data, index) => {
+          const { date, company, title, content, timelineImageURL } = data;
           const isIndexOdd = index % 2 !== 0;
           return (
             <div key={date} className="relative z-10">
