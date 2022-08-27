@@ -1,4 +1,5 @@
 import { educationImageURL, experienceImageURL } from "../common/constants";
+import { Apps, EDM } from "../assets/index";
 
 export const timeLineData = {
   experience: [
@@ -49,8 +50,7 @@ export const featuredProjects = {
     sourceLink: "https://github.com/Jaynil1611/Enhanced-Portfolio",
   },
   p2: {
-    imageLink:
-      "https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    imageLink: Apps,
     title: "Title 2",
     content: "sfsfd",
     tags: ["HTML", "CSS"],
@@ -59,10 +59,21 @@ export const featuredProjects = {
   },
 };
 
+export const otherProjects = {
+  musicRecommendation: {
+    imageLink: EDM,
+    title: "MUSIC RECOMMENDATION",
+    content: "sfsfd",
+    tags: ["HTML", "CSS", "Javascript", "React"],
+    demoLink: "https://jaynil-gaglani-edm-genres.netlify.app/",
+    sourceLink: "https://github.com/Jaynil1611/EDM-Genres",
+  },
+};
+
 export const cardsData = {
   projects: {
     featured: featuredProjects,
-    all: { ...featuredProjects },
+    all: { ...featuredProjects, ...otherProjects },
   },
 };
 

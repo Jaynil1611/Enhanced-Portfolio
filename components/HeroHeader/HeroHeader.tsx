@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import HeroImage from "../../assets/waving-hand.png";
+import { HeroImage } from "../../assets/index";
 import { Button, LinkButton } from "../index";
 
 const HeroHeader = () => {
