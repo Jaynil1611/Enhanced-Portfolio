@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import {
+  getAllBlogPosts,
   getAllProjects,
   getFilteredProjectsBasedOnTag,
   getTagsFromAllProjects,
   pluralize,
-} from "../common/utils";
-import { Card, Layout, SectionHeader } from "../components";
+} from "../../common/utils";
+import { BlogCard, Card, Layout, SectionHeader } from "../../components";
 
-const Projects = () => {
+export async function getStaticProps() {
+  const allBlogPosts = await getAllBlogPosts();
+  return { props: { allBlogPosts } };
+}
+
+const Blogs = ({ allBlogPosts }) => {
   const [selectedTag, setSelectedTag] = useState("");
   const [filteredProjects, setFilteredProjects] = useState(() =>
     getAllProjects()
@@ -29,9 +35,9 @@ const Projects = () => {
       <div className="flex flex-col lg:flex-row mb-24">
         <div className="flex flex-col">
           {selectedTag && <SectionHeader heading={headingText} />}
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 lg:min-w-[42rem] mr-4">
-            {filteredProjects.map((project) => (
-              <Card key={project.title} {...project} />
+          <ul className="flex flex-col gap-16 lg:min-w-[42rem] mr-4">
+            {allBlogPosts.map((blogPost) => (
+              <BlogCard key={blogPost.title} {...blogPost} />
             ))}
           </ul>
         </div>
@@ -59,4 +65,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Blogs;
