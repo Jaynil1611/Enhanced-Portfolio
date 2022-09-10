@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "highlight.js/styles/github-dark.css";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {

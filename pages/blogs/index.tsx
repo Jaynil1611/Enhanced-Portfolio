@@ -1,34 +1,39 @@
 import React, { useState } from "react";
 import {
   getAllBlogPosts,
-  getAllProjects,
-  getFilteredProjectsBasedOnTag,
-  getTagsFromAllProjects,
+  getFilteredBlogsBasedOnTag,
+  getTagsFromAllBlogs,
   pluralize,
 } from "../../common/utils";
-import { BlogCard, Card, Layout, SectionHeader } from "../../components";
+import { BlogCard, Layout, SectionHeader } from "../../components";
+import { BlogPost } from "../../components";
 
 export async function getStaticProps() {
   const allBlogPosts = await getAllBlogPosts();
   return { props: { allBlogPosts } };
 }
 
-const Blogs = ({ allBlogPosts }) => {
+interface BlogsProps {
+  allBlogPosts: Array<BlogPost>;
+}
+
+const Blogs = ({ allBlogPosts }: BlogsProps) => {
   const [selectedTag, setSelectedTag] = useState("");
-  const [filteredProjects, setFilteredProjects] = useState(() =>
-    getAllProjects()
-  );
+  const [filteredBlogs, setFilteredBlogs] = useState(allBlogPosts);
 
   const handleTagClick = (tagName: string) => {
     const tag = selectedTag === tagName ? "" : tagName;
     setSelectedTag(tag);
-    const filteredProjectsBasedOnTag = getFilteredProjectsBasedOnTag(tag);
-    setFilteredProjects(filteredProjectsBasedOnTag);
+    const filteredBlogsBasedOnTag = getFilteredBlogsBasedOnTag(
+      allBlogPosts,
+      tag
+    );
+    setFilteredBlogs(filteredBlogsBasedOnTag);
   };
 
-  const filteredLength = filteredProjects.length;
-  const projectText = pluralize(filteredLength, "project");
-  const headingText = `${filteredLength} ${projectText} tagged with ${selectedTag}`;
+  const filteredLength = filteredBlogs.length;
+  const blogText = pluralize(filteredLength, "blog");
+  const headingText = `${filteredLength} ${blogText} tagged with ${selectedTag}`;
 
   return (
     <Layout>
@@ -44,7 +49,7 @@ const Blogs = ({ allBlogPosts }) => {
         <div className="sticky top-0 self-start py-4 w-full lg:px-0">
           <h4>Tags</h4>
           <ul className="flex flex-wrap mt-2">
-            {getTagsFromAllProjects().map(([tagName, tagCount]) => {
+            {getTagsFromAllBlogs(allBlogPosts).map(([tagName, tagCount]) => {
               const isSelected = selectedTag === tagName;
               return (
                 <li

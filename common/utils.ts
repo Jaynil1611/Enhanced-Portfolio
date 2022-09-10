@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import readingTime from "reading-time";
+import { BlogPost } from "../components";
 import { CardProps } from "../components/Card/Card";
 import { cardsData } from "./data";
 
@@ -24,18 +25,31 @@ export const getFilteredProjectsBasedOnTag = (searchTag: string) => {
   });
 };
 
+// Remove this duplicate type
+interface Tags {
+  tags: Array<string>;
+}
+
+export const getTagsFromEntity = (
+  tagsObj: Record<string, number>,
+  { tags }: Tags
+) => {
+  tags.forEach((tag: string) => {
+    if (tagsObj[tag]) {
+      tagsObj[tag] += 1;
+    } else {
+      tagsObj[tag] = 1;
+    }
+  });
+  return tagsObj;
+};
+
 export const getTagsFromAllProjects = () => {
   const all = cardsData.projects.all;
-  const result = Object.values(all).reduce((tagsObj, { tags }) => {
-    tags.forEach((tag: string) => {
-      if (tagsObj[tag]) {
-        tagsObj[tag] += 1;
-      } else {
-        tagsObj[tag] = 1;
-      }
-    });
-    return tagsObj;
-  }, {} as Record<string, number>);
+  const result = Object.values(all).reduce(
+    getTagsFromEntity,
+    {} as Record<string, number>
+  );
   return Object.entries(result);
 };
 
@@ -88,11 +102,30 @@ export const getBlogPostData = (id: string) => {
     content,
     frontmatter: {
       id,
-      // excerpt: data.excerpt,
+      excerpt: data.excerpt,
       title: data.title,
       publishedAt: data.publishedAt,
       readingTime: readingTime(fileContents).text,
       ...data,
     },
   };
+};
+
+export const getTagsFromAllBlogs = (allBlogPosts: Array<BlogPost>) => {
+  const result = allBlogPosts.reduce(
+    getTagsFromEntity,
+    {} as Record<string, number>
+  );
+  return Object.entries(result);
+};
+
+export const getFilteredBlogsBasedOnTag = (
+  allBlogPosts: Array<BlogPost>,
+  searchTag: string
+) => {
+  if (!searchTag) return allBlogPosts;
+  return allBlogPosts.filter((value) => {
+    const project = value;
+    return project.tags.some((tag: string) => tag === searchTag);
+  });
 };
