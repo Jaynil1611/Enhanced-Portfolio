@@ -1,5 +1,7 @@
-import Link from "next/link";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Hashnode } from "../../assets";
 
 const Footer = () => {
   return (
@@ -33,16 +35,18 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="mailto:g.jaynil2401@gmail.com">
+              <Link href="https://jaynil-gaglani.hashnode.dev">
                 <a className="text-white" target="_blank">
-                  <i className="bx bx-envelope bx-sm bx-border-circle bg-gray-400 hover:bg-gray-600"></i>
+                  <i className="bx bx-sm bx-border-circle bg-gray-400 hover:bg-gray-600">
+                    <Image src={Hashnode} alt="" width="26px" height="25px" />
+                  </i>
                 </a>
               </Link>
             </li>
             <li>
-              <Link href="https://twitter.com/JAYNIL1611">
+              <Link href="mailto:g.jaynil2401@gmail.com">
                 <a className="text-white" target="_blank">
-                  <i className="bx bxl-medium bx-sm bx-border-circle bg-gray-400 hover:bg-gray-600"></i>
+                  <i className="bx bx-envelope bx-sm bx-border-circle bg-gray-400 hover:bg-gray-600"></i>
                 </a>
               </Link>
             </li>

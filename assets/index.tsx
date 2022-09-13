@@ -9,3 +9,4 @@ export { default as Emoji } from "./Emoji.png";
 export { default as Profile } from "./Profile.png";
 export { default as Maze } from "./Maze.jpg";
 export { default as HeroImage } from "./waving-hand.png";
+export { default as Hashnode } from "./hashnode-white.png";
