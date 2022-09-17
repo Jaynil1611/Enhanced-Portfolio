@@ -1,6 +1,6 @@
 import React from "react";
 
-interface TagsProps {
+export interface TagsProps {
   tags: Array<string>;
 }
 

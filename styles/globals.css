@@ -22,6 +22,10 @@ body::after {
   box-sizing: border-box;
 }
 
+code {
+  border-radius: 4px;
+}
+
 @layer components {
   .timeline__img {
     @apply w-32 h-32 bg-gray-100 flex justify-center items-center object-cover rounded-full shadow-md border-4 border-solid border-white xs:absolute md:mx-auto md:left-0 md:right-0;

@@ -5,7 +5,7 @@ import {
   getTagsFromAllProjects,
   pluralize,
 } from "../common/utils";
-import { Card, Layout, SectionHeader } from "../components";
+import { Card, Layout, SectionHeader, TagLayout } from "../components";
 
 const Projects = () => {
   const [selectedTag, setSelectedTag] = useState("");
@@ -35,25 +35,11 @@ const Projects = () => {
             ))}
           </ul>
         </div>
-        <div className="sticky top-0 self-start py-4 w-full lg:px-0">
-          <h4>Tags</h4>
-          <ul className="flex flex-wrap mt-2">
-            {getTagsFromAllProjects().map(([tagName, tagCount]) => {
-              const isSelected = selectedTag === tagName;
-              return (
-                <li
-                  key={tagName}
-                  className={`m-1 text-sm px-3 py-1 border border-gray-500 rounded-full cursor-pointer hover:bg-blue-600 hover:text-white ${
-                    isSelected ? "bg-blue-600 text-white" : ""
-                  }`}
-                  onClick={() => handleTagClick(tagName)}
-                >
-                  {tagName}, {tagCount}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <TagLayout
+          data={getTagsFromAllProjects()}
+          handleTagClick={handleTagClick}
+          selectedTag={selectedTag}
+        />
       </div>
     </Layout>
   );

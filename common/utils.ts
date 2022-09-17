@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import readingTime from "reading-time";
-import { BlogPost } from "../components";
+import { BlogPost, TagsProps } from "../components";
 import { CardProps } from "../components/Card/Card";
 import { cardsData } from "./data";
 
@@ -16,23 +16,26 @@ export const getAllProjects = () => {
   return Object.values(all);
 };
 
-export const getFilteredProjectsBasedOnTag = (searchTag: string) => {
-  const all = Object.values(cardsData.projects.all);
-  if (!searchTag) return all;
-  return all.filter((value) => {
-    const project = value as CardProps;
+// TODO: Refactor type naming
+export const getFilteredEntitiesBasedOnTag = <T extends BlogPost | CardProps>(
+  data: Array<T>,
+  searchTag: string
+) => {
+  if (!searchTag) return data;
+  return data.filter((value) => {
+    const project = value;
     return project.tags.some((tag: string) => tag === searchTag);
   });
 };
 
-// Remove this duplicate type
-interface Tags {
-  tags: Array<string>;
-}
+export const getFilteredProjectsBasedOnTag = (searchTag: string) => {
+  const all = Object.values(cardsData.projects.all);
+  return getFilteredEntitiesBasedOnTag(all, searchTag);
+};
 
 export const getTagsFromEntity = (
   tagsObj: Record<string, number>,
-  { tags }: Tags
+  { tags }: TagsProps
 ) => {
   tags.forEach((tag: string) => {
     if (tagsObj[tag]) {
@@ -122,10 +125,4 @@ export const getTagsFromAllBlogs = (allBlogPosts: Array<BlogPost>) => {
 export const getFilteredBlogsBasedOnTag = (
   allBlogPosts: Array<BlogPost>,
   searchTag: string
-) => {
-  if (!searchTag) return allBlogPosts;
-  return allBlogPosts.filter((value) => {
-    const project = value;
-    return project.tags.some((tag: string) => tag === searchTag);
-  });
-};
+) => getFilteredEntitiesBasedOnTag(allBlogPosts, searchTag);

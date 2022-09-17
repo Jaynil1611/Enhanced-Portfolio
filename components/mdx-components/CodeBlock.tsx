@@ -5,7 +5,7 @@ interface CodeBlockProps {
 }
 
 const CodeBlock = ({ children }: CodeBlockProps) => {
-  return <div className="my-4">{children}</div>;
+  return <div className="my-4 not-prose">{children}</div>;
 };
 
 export default CodeBlock;

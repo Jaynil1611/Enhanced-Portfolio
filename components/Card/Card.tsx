@@ -34,7 +34,7 @@ const Card = ({
                 height="60px"
                 layout="responsive"
                 objectFit="initial"
-                className="rounded-t-md cursor-pointer opacity-80 transition-opacity transition-transform duration-500 hover:opacity-100 hover:scale-110"
+                className="rounded-t-md cursor-pointer opacity-80 transition-opacity duration-500 hover:opacity-100 hover:scale-110"
               />
             </a>
           </Link>
