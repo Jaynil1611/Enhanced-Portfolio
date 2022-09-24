@@ -14,7 +14,7 @@ const CommonSEO = ({ title, description, canonicalUrl }: CommonSEOProps) => {
   const ogType = "website";
   const siteURL = typeof window !== 'undefined' ? window.location.hostname: '';
   const twitterHandle = "https://twitter.com/Jaynil_Gaglani";
-  const ogImage = "../../assets/Mind_UI.png";
+  const ogImage = "/assets/Mind_UI.png";
 
   return (
     <Head>
@@ -31,7 +31,7 @@ const CommonSEO = ({ title, description, canonicalUrl }: CommonSEOProps) => {
       <meta name="twitter:site" content={twitterHandle} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {/* <meta name="twitter:image" content={twImage} /> */}
+      <meta name="twitter:image" content={ogImage} />
       <link
         rel="canonical"
         href={canonicalUrl ? canonicalUrl : `${siteURL}${router.asPath}`}
