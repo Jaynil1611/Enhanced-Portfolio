@@ -14,7 +14,7 @@ const CommonSEO = ({ title, description, canonicalUrl }: CommonSEOProps) => {
   const ogType = "website";
   const siteURL = typeof window !== 'undefined' ? window.location.hostname: '';
   const twitterHandle = "https://twitter.com/Jaynil_Gaglani";
-  const ogImage = "/assets/Mind_UI.png";
+  const ogImage = "/static/images/Mind_UI.png";
 
   return (
     <Head>
