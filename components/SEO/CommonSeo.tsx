@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
-import { MindUI } from "../../assets";
 
 interface CommonSEOProps {
   title: string;
@@ -15,7 +14,7 @@ const CommonSEO = ({ title, description, canonicalUrl }: CommonSEOProps) => {
   const ogType = "website";
   const siteURL = typeof window !== 'undefined' ? window.location.hostname: '';
   const twitterHandle = "https://twitter.com/Jaynil_Gaglani";
-  const ogImage = "./assets/Mind_UI.png";
+  const ogImage = "../../assets/Mind_UI.png";
 
   return (
     <Head>
