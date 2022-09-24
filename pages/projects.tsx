@@ -5,7 +5,7 @@ import {
   getTagsFromAllProjects,
   pluralize,
 } from "../common/utils";
-import { Card, Layout, SectionHeader, TagLayout } from "../components";
+import { ProjectCard, Layout, SectionHeader, TagLayout } from "../components";
 
 const Projects = () => {
   const [selectedTag, setSelectedTag] = useState("");
@@ -31,7 +31,7 @@ const Projects = () => {
           {selectedTag && <SectionHeader heading={headingText} />}
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 lg:min-w-[42rem] mr-4">
             {filteredProjects.map((project) => (
-              <Card key={project.title} {...project} />
+              <ProjectCard key={project.title} {...project} />
             ))}
           </ul>
         </div>

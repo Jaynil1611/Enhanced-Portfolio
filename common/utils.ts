@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import path from "path";
 import readingTime from "reading-time";
 import { BlogPost, TagsProps } from "../components";
-import { CardProps } from "../components/Card/Card";
+import { Project } from "../components";
 import { cardsData } from "./data";
 
 export const getFeaturedProjects = () => {
@@ -16,8 +16,7 @@ export const getAllProjects = () => {
   return Object.values(all);
 };
 
-// TODO: Refactor type naming
-export const getFilteredEntitiesBasedOnTag = <T extends BlogPost | CardProps>(
+export const getFilteredEntitiesBasedOnTag = <T extends BlogPost | Project>(
   data: Array<T>,
   searchTag: string
 ) => {
@@ -29,7 +28,7 @@ export const getFilteredEntitiesBasedOnTag = <T extends BlogPost | CardProps>(
 };
 
 export const getFilteredProjectsBasedOnTag = (searchTag: string) => {
-  const all = Object.values(cardsData.projects.all);
+  const all = getAllProjects();
   return getFilteredEntitiesBasedOnTag(all, searchTag);
 };
 
@@ -48,12 +47,11 @@ export const getTagsFromEntity = (
 };
 
 export const getTagsFromAllProjects = () => {
-  const all = cardsData.projects.all;
-  const result = Object.values(all).reduce(
+  const result = getAllProjects().reduce(
     getTagsFromEntity,
     {} as Record<string, number>
   );
-  return Object.entries(result);
+  return Object.entries(result).sort((a, b) => b[0].localeCompare(a[0]));
 };
 
 export const pluralize = (count: number, query: string) => {

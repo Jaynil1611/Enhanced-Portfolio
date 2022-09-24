@@ -79,7 +79,7 @@ const Blog = ({ blogPostData: { source, frontmatter } }: BlogProps) => {
           <i className="ml-3 bx bxs-time-five mt-0.5"></i>
           <span>{frontmatter.readingTime}</span>
         </p>
-        <h1 className="text-4xl font-bold mb-8">{frontmatter.title}</h1>
+        <h1 className="text-4xl font-bold mb-8 mt-3">{frontmatter.title}</h1>
         <div className="prose max-w-none lg:prose-xl">
           <MDXRemote {...source} components={{ Image, CodeBlock }} />
         </div>

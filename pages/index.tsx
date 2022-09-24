@@ -2,12 +2,12 @@ import { timeLineData } from "../common/data";
 import { getFeaturedProjects } from "../common/utils";
 import {
   Button,
-  Card,
+  ProjectCard,
   HeroHeader,
   Layout,
   SectionHeader,
   Timeline,
-} from "../components/index";
+} from "../components";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -19,11 +19,11 @@ export default function Home() {
         <SectionHeader
           heading="Featured Projects"
           description="I enjoy to continue learning to improve my knowledge and to gain a completely new experience. You'll see some of the frontend & backend projects I've accomplished."
-        />      
+        />
         <div className="mb-24">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mb-6">
             {featuredProjects.map((project) => (
-              <Card key={project.title} {...project} />
+              <ProjectCard key={project.title} {...project} />
             ))}
           </div>
           <div className="flex justify-center">

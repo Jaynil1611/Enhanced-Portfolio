@@ -1,7 +1,7 @@
 export { default as Layout } from "./Layout";
 export { default as Button } from "./Buttons/Button";
 export { default as LinkButton } from "./Buttons/LinkButton";
-export { default as Card } from "./Card/Card";
+export { default as ProjectCard } from "./Card/ProjectCard";
 export { default as Footer } from "./Footer/Footer";
 export { default as NavbarMobile } from "./Navbar/NavbarMobile";
 export { default as NavbarDesktop } from "./Navbar/NavbarDesktop";
@@ -12,5 +12,7 @@ export { default as HeroHeader } from "./HeroHeader/HeroHeader";
 export { default as SectionHeader } from "./SectionHeader/SectionHeader";
 export { default as BlogCard } from "./Card/BlogCard";
 export { default as TagLayout } from "./Tags/TagLayout";
+export { default as CommonSeo } from "./SEO/CommonSeo";
+export type { Project } from "./Card/ProjectCard";
 export type { TagsProps } from "./Tags/Tags";
 export type { BlogPost } from "./Card/BlogCard";
