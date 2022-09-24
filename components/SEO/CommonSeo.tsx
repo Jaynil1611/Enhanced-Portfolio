@@ -14,7 +14,7 @@ const CommonSEO = ({ title, description, canonicalUrl }: CommonSEOProps) => {
   const ogType = "website";
   const siteURL = "https://enhanced-portfolio.vercel.app";
   const twitterHandle = "https://twitter.com/Jaynil_Gaglani";
-  const ogImage = `${siteURL}/assets/Mind_UI.png`;
+  const ogImage = `${siteURL}/static/images/Mind_UI.png`;
 
   return (
     <Head>
