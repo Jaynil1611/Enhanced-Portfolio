@@ -1,12 +1,12 @@
 import Image from "next/image";
-import React from "react";
+import React, { ReactNode } from "react";
 import { experienceImageURL } from "../../common/constants";
 
 interface TimelineData {
   date?: string;
   company?: string;
   title: string;
-  content: string;
+  content: ReactNode;
   timelineImageURL: string;
 }
 

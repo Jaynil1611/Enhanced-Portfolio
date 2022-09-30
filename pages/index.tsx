@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <SectionHeader
           heading="Work Experience"
-          description="I have done internships at Credit Suisse (Technology Analyst) and food-tech startup Eatabl (Angular Developer). Check out more details below."
+          description="I am working full-time as a Frontend Engineer at Razorpay & have done internships at Credit Suisse and food-tech startup Eatabl. Check out more details below."
         />
         <Timeline timeline={timeLineData.experience} />
       </Layout>

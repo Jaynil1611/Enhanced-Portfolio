@@ -20,10 +20,35 @@ import {
 export const timeLineData = {
   experience: [
     {
+      date: "September 2021 - Present",
+      company: "Razorpay",
+      title: "Frontend Engineer",
+      content: (
+        <>
+          Owned & delivered <b>Vendor Portal</b> project with team. Developed UI
+          & wrote tests covering all the edge cases.
+          <br /> Increased testing coverage of the codebase to <b>40%</b> by
+          writing unit & integration tests using <b>RTL</b>.
+          <br /> Refactored critical files into <b>TypeScript</b> & developed
+          new features with TS.
+        </>
+      ),
+      timelineImageURL: experienceImageURL,
+    },
+    {
       date: "May 2020 - July 2020",
       company: "Credit Suisse",
       title: "Technology Analyst Intern",
-      content: `My project was to build a test assessment platform using React, Redux & Micronaut(JVM). I also developed REST API's to handle requests and give responses.`,
+      content: (
+        <>
+          Developed a User Interface for an Online Test Assessment Platform
+          using <b>ReactJS</b> & <b>Redux</b>. <br />
+          Created a MySQL database & developed REST API’s in Java with backend
+          built using <b>Micronaut</b>. <br />
+          Written unit test cases using Jest, Enzyme & JUnit 5, achieved more
+          than <b>80%</b> overall code coverage
+        </>
+      ),
       timelineImageURL: experienceImageURL,
     },
     {
@@ -36,10 +61,37 @@ export const timeLineData = {
   ],
   education: [
     {
-      date: "June 2021",
-      title: "B.Tech in Information Technology",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      date: "2017 - 2021",
+      title: "Bachelor of Technology, Information Technology",
+      content: (
+        <>
+          Grade: CGPA: 9.64 <br /> Completed my B.Tech in I.T. Engineering from
+          Sardar Patel Institute of Technology, Mumbai.
+        </>
+      ),
+
+      timelineImageURL: educationImageURL,
+    },
+    {
+      date: "2015 - 2017",
+      title: "HSC, Science",
+      content: (
+        <>
+          Grade: 92 % <br /> Completed my HSC Science from Thakur College of
+          Science And Commerce, Mumbai.
+        </>
+      ),
+      timelineImageURL: educationImageURL,
+    },
+    {
+      date: "2015",
+      title: "SSC",
+      content: (
+        <>
+          Grade: 92 % <br /> Completed schooling from St.Francis D'Assisi High
+          School, Mumbai.
+        </>
+      ),
       timelineImageURL: educationImageURL,
     },
   ],
