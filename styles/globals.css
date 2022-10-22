@@ -15,7 +15,8 @@ body {
 body::after {
   content: "";
   display: block;
-  height: 150px; /* Set same as footer's height */
+  height: 150px;
+  /* Set same as footer's height */
 }
 
 * {
@@ -26,39 +27,80 @@ code {
   border-radius: 4px;
 }
 
+:root {
+  --primary-color: #393e46;
+  --secondary-color: #fd7014;
+  --background-color: #222831;
+  --light-background-color: #eeeeee;
+}
+
 @layer components {
   .timeline__img {
-    @apply w-32 h-32 bg-gray-100 flex justify-center items-center object-cover rounded-full shadow-md border-4 border-solid border-white xs:absolute md:mx-auto md:left-0 md:right-0;
+    @apply w-32 h-32 flex justify-center items-center object-cover rounded-full shadow-md border-4 border-solid border-white xs:absolute md:mx-auto md:left-0 md:right-0;
+    background-color: var(--light-background-color);
   }
+
   .timeline__container {
     @apply relative pt-2 xs:pt-0 xs:pl-34 md:ml-auto md:w-1/2 md:pl-20;
   }
+
   .timeline__container--left {
     @apply md:mr-auto md:ml-0 md:pl-0 md:pr-20;
   }
+
   .timeline__pointer {
     @apply absolute inset-0 left-14 h-4 w-4 transform rotate-45 bg-white xs:left-34 xs:top-14 md:left-18;
   }
+
   .timeline__pointer--left {
     @apply md:left-auto md:right-18;
   }
+
+  .timeline__date {
+    color: var(--secondary-color);
+  }
+
+  .timeline__bg {
+    background-color: var(--light-background-color);
+  }
+
   .navbar__item:hover {
     opacity: 0.6;
   }
+
   .button__transition {
     transition: border 500ms, background-color 500ms, color 500ms;
   }
+
   .button__transition:hover {
-    @apply bg-gray-700 border-gray-700 text-white;
+    @apply text-white;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
   }
+
   .footer {
     position: absolute;
     bottom: 0;
     height: 150px;
   }
+
   .line__clamp {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .footer__background {
+    background-color: var(--background-color);
+  }
+
+  .tag__filters:hover {
+    @apply text-white;
+    background-color: var(--primary-color);
+  }
+
+  .tag__filters--selected {
+    @apply text-white;
+    background-color: var(--primary-color);
   }
 }
