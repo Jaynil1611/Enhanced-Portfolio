@@ -13,6 +13,7 @@ export { default as SectionHeader } from "./SectionHeader/SectionHeader";
 export { default as BlogCard } from "./Card/BlogCard";
 export { default as TagLayout } from "./Tags/TagLayout";
 export { default as CommonSeo } from "./SEO/CommonSeo";
+export { default as HeaderContent } from "./HeroHeader/HeaderContent";
 export type { Project } from "./Card/ProjectCard";
 export type { TagsProps } from "./Tags/Tags";
 export type { BlogPost } from "./Card/BlogCard";

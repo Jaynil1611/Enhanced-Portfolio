@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  getAllProjects,
   getFilteredProjectsBasedOnTag,
   getTagsFromAllProjects,
   pluralize,
@@ -9,16 +8,11 @@ import { ProjectCard, Layout, SectionHeader, TagLayout } from "../components";
 
 const Projects = () => {
   const [selectedTag, setSelectedTag] = useState("");
-  // const [filteredProjects, setFilteredProjects] = useState(() =>
-  //   getAllProjects()
-  // );
   const filteredProjects = getFilteredProjectsBasedOnTag(selectedTag);
 
   const handleTagClick = (tagName: string) => {
     const tag = selectedTag === tagName ? "" : tagName;
     setSelectedTag(tag);
-    // const filteredProjectsBasedOnTag = ;
-    // setFilteredProjects(filteredProjectsBasedOnTag);
   };
 
   const filteredLength = filteredProjects.length;

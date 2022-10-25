@@ -16,7 +16,7 @@ interface TimelineProps {
 
 const Timeline = ({ timeline }: TimelineProps) => {
   return (
-    <div className="antialiased p-6 timeline__bg  text-gray-800 mb-28">
+    <div className="antialiased p-6 timeline__bg mb-28">
       <div className="relative container mx-auto px-6 flex flex-col space-y-8">
         <div className="absolute z-0 inset-0 left-22 bg-white h-full w-2 shadow-md md:mx-auto md:left-0 md:right:0"></div>
         {timeline?.map((data, index) => {
@@ -50,7 +50,7 @@ const Timeline = ({ timeline }: TimelineProps) => {
                   </span>
                   <h1 className="text-2xl font-bold pt-1">{company}</h1>
                   <p className="text-gray-500 py-1">{title}</p>
-                  <p className="pt-1">{content}</p>
+                  <p className="lg:text-lg pt-1">{content}</p>
                 </div>
               </div>
             </div>

@@ -9,14 +9,14 @@ interface TagLayoutProps {
 const TagLayout = ({ data, handleTagClick, selectedTag }: TagLayoutProps) => {
   return (
     <div className="sticky top-0 self-start py-4 w-full lg:px-0">
-      <h4>Tags</h4>
+      <p className="text-xl pl-1">Tags</p>
       <ul className="flex flex-wrap mt-2">
         {data.map(([tagName, tagCount]) => {
           const isSelected = selectedTag === tagName;
           return (
             <li
               key={tagName}
-              className={`m-1 text-sm px-3 py-1 border border-gray-500 rounded-full cursor-pointer tag__filters ${
+              className={`m-1 px-3 py-1 border border-gray-500 rounded-full cursor-pointer tag__filters ${
                 isSelected ? "tag__filters--selected" : ""
               }`}
               onClick={() => handleTagClick(tagName)}

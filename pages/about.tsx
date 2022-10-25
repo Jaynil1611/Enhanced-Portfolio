@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { Profile } from "../assets";
 import { skillsData, timeLineData } from "../common/data";
 import { SectionHeader, Timeline } from "../components";
 import Layout from "../components/Layout";
@@ -11,22 +12,24 @@ const About = () => {
       <div className="flex flex-col-reverse flex-1 items-center md:flex-row">
         <div className="w-full p-4 md:w-full md:p-0">
           <Image
-            src="https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-            alt=""
+            src={Profile}
             width="100%"
-            height="50px"
+            height="100px"
             layout="responsive"
             objectFit="cover"
             className="rounded-md"
+            alt="logo"
           />
         </div>
         <header className="md:ml-8 flex flex-col p-4">
-          <h1 className="text-3xl font-bold pb-4">Hello I am Creator</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            assumenda, illum architecto numquam non itaque provident voluptate,
-            beatae, quia debitis vitae quasi sapiente animi eius dolorem dolores
-            et deleniti! Ullam!
+          <h1 className="header__title font-bold pb-4">
+            Hello, I&apos;m Jaynil Gaglani
+          </h1>
+          <p className="lg:text-xl text-gray-500">
+            I want to take my passion, education, and experience to develop
+            real-world web apps. I&apos;m extremely motivated to constantly
+            develop my skills and grow professionally. Apart from coding, I love
+            listening to electronic music and play football.
           </p>
         </header>
       </div>

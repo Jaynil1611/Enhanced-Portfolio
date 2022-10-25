@@ -29,6 +29,7 @@ const ProjectCard = ({
             <Image
               src={imageLink}
               alt=""
+              loading="eager"
               width="100%"
               height="60px"
               layout="responsive"
@@ -42,20 +43,18 @@ const ProjectCard = ({
         <div
           style={{
             WebkitLineClamp: 2,
-            minHeight: "20px",
           }}
-          className="text-2xl font-bold uppercase flex-1 flex-wrap"
+          className="text-2xl font-bold uppercase flex-1 flex-wrap line__clamp--project-title"
         >
           {title}
         </div>
-        <div className="flex-1 pt-2" style={{ minHeight: "70px" }}>
+        <div className="flex-1 pt-2 line__clamp--project-tags">
           <Tags tags={tags} />
         </div>
         <div
-          className="text-gray-500 pt-3 line__clamp"
+          className="text-gray-500 pt-3 line__clamp line__clamp--project-content"
           style={{
             WebkitLineClamp: 3,
-            minHeight: "80px",
           }}
         >
           {content}

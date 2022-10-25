@@ -9,6 +9,4 @@ export const navData = [
     route: "https://jaynil1611.github.io/Resume/",
     target: "_blank",
   },
-  // { name: "Blog", component: "Blog", route: "/blog" },
-  // { name: "Contact", component: "Contact", route: "/contact" },
 ];

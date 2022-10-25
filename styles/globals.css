@@ -32,6 +32,7 @@ code {
   --secondary-color: #fd7014;
   --background-color: #222831;
   --light-background-color: #eeeeee;
+  --text-color: #595959;
 }
 
 @layer components {
@@ -68,8 +69,17 @@ code {
     opacity: 0.6;
   }
 
+  .navbar__item--active {
+    @apply border-b-2;
+  }
+
+  .header__title {
+    font-size: 2.5rem;
+  }
+
   .button__transition {
     transition: border 500ms, background-color 500ms, color 500ms;
+    letter-spacing: 0.2em;
   }
 
   .button__transition:hover {
@@ -90,6 +100,18 @@ code {
     overflow: hidden;
   }
 
+  .line__clamp--project-content {
+    min-height: 80px;
+  }
+
+  .line__clamp--project-title {
+    min-height: 20px;
+  }
+
+  .line__clamp--project-tags {
+    min-height: 70px;
+  }
+
   .footer__background {
     background-color: var(--background-color);
   }
@@ -102,5 +124,19 @@ code {
   .tag__filters--selected {
     @apply text-white;
     background-color: var(--primary-color);
+  }
+
+  @media only screen and (max-width: 640px) {
+    .line__clamp--project-content {
+      min-height: initial;
+    }
+
+    .line__clamp--project-title {
+      min-height: initial;
+    }
+
+    .line__clamp--project-tags {
+      min-height: initial;
+    }
   }
 }

@@ -29,8 +29,6 @@ export const timeLineData = {
           & wrote tests covering all the edge cases.
           <br /> Increased testing coverage of the codebase to <b>40%</b> by
           writing unit & integration tests using <b>RTL</b>.
-          <br /> Refactored critical files into <b>TypeScript</b> & developed
-          new features with TS.
         </>
       ),
       timelineImageURL: experienceImageURL,
@@ -43,8 +41,6 @@ export const timeLineData = {
         <>
           Developed a User Interface for an Online Test Assessment Platform
           using <b>ReactJS</b> & <b>Redux</b>. <br />
-          Created a MySQL database & developed REST API’s in Java with backend
-          built using <b>Micronaut</b>. <br />
           Written unit test cases using Jest, Enzyme & JUnit 5, achieved more
           than <b>80%</b> overall code coverage
         </>
@@ -55,7 +51,13 @@ export const timeLineData = {
       date: "June 2019 - August 2019",
       company: "Eatabl",
       title: "Angular Developer",
-      content: `Eatabl is a food-tech startup based in Mumbai. My work was to design a website using Angular 6 with all functionalities and store the data into Firebase.`,
+      content: (
+        <>
+          Eatabl is a food-tech startup based in Mumbai. My work was to design a
+          website using <b>Angular 6</b> with all functionalities and store the
+          data into <b>Firebase</b>.
+        </>
+      ),
       timelineImageURL: experienceImageURL,
     },
   ],
@@ -65,8 +67,8 @@ export const timeLineData = {
       title: "Bachelor of Technology, Information Technology",
       content: (
         <>
-          Grade: CGPA: 9.64 <br /> Completed my B.Tech in I.T. Engineering from
-          Sardar Patel Institute of Technology, Mumbai.
+          Grade: CGPA: <b>9.64</b> <br /> Completed my B.Tech in I.T.
+          Engineering from Sardar Patel Institute of Technology, Mumbai.
         </>
       ),
 
@@ -77,8 +79,8 @@ export const timeLineData = {
       title: "HSC, Science",
       content: (
         <>
-          Grade: 92 % <br /> Completed my HSC Science from Thakur College of
-          Science And Commerce, Mumbai.
+          Grade: <b>92 %</b> <br /> Completed my HSC Science from Thakur College
+          of Science And Commerce, Mumbai.
         </>
       ),
       timelineImageURL: educationImageURL,
@@ -88,8 +90,8 @@ export const timeLineData = {
       title: "SSC",
       content: (
         <>
-          Grade: 92 % <br /> Completed schooling from St.Francis D'Assisi High
-          School, Mumbai.
+          Grade: <b>96.8 %</b> <br /> Completed schooling from St.Francis
+          D&apos;Assisi High School, Mumbai.
         </>
       ),
       timelineImageURL: educationImageURL,
