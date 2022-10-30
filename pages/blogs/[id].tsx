@@ -12,6 +12,7 @@ import rehypeHighlight from "rehype-highlight";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 import rehypeCodeTitles from "rehype-code-titles";
+import imageSize from "rehype-img-size";
 import { CodeBlock } from "../../components/mdx-components";
 
 hljs.registerLanguage("javascript", javascript);
@@ -53,6 +54,8 @@ export async function getStaticProps({ params }: GetStaticProps) {
         ],
         rehypeHighlight,
         rehypeCodeTitles,
+        //@ts-ignore
+        [imageSize, { dir: "public/static/images/blog" }],
       ],
     },
   });
@@ -61,6 +64,14 @@ export async function getStaticProps({ params }: GetStaticProps) {
     props: { blogPostData: { source: mdxSource, frontmatter } },
   };
 }
+
+const defaultComponents = {
+  img: (props: any) => (
+    <span className="flex justify-center items-center">
+      <Image {...props} height="300px" width="500px" alt="" />
+    </span>
+  ),
+};
 
 const Blog = ({ blogPostData: { source, frontmatter } }: BlogProps) => {
   useEffect(() => {
@@ -81,7 +92,10 @@ const Blog = ({ blogPostData: { source, frontmatter } }: BlogProps) => {
         </p>
         <h1 className="text-4xl font-bold mb-8 mt-3">{frontmatter.title}</h1>
         <div className="prose max-w-none lg:prose-xl">
-          <MDXRemote {...source} components={{ Image, CodeBlock }} />
+          <MDXRemote
+            {...source}
+            components={{ ...defaultComponents, CodeBlock }}
+          />
         </div>
       </div>
     </Layout>

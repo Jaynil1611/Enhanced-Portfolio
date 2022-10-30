@@ -18,6 +18,7 @@ const About = () => {
             layout="responsive"
             objectFit="cover"
             className="rounded-md"
+            loading="eager"
             alt="logo"
           />
         </div>

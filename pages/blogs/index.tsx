@@ -19,19 +19,18 @@ interface BlogsProps {
 
 const Blogs = ({ allBlogPosts }: BlogsProps) => {
   const [selectedTag, setSelectedTag] = useState("");
-  const [filteredBlogs, setFilteredBlogs] = useState(allBlogPosts);
+
+  const filteredBlogsBasedOnTag = getFilteredBlogsBasedOnTag(
+    allBlogPosts,
+    selectedTag
+  );
 
   const handleTagClick = (tagName: string) => {
     const tag = selectedTag === tagName ? "" : tagName;
     setSelectedTag(tag);
-    const filteredBlogsBasedOnTag = getFilteredBlogsBasedOnTag(
-      allBlogPosts,
-      tag
-    );
-    setFilteredBlogs(filteredBlogsBasedOnTag);
   };
 
-  const filteredLength = filteredBlogs.length;
+  const filteredLength = filteredBlogsBasedOnTag.length;
   const blogText = pluralize(filteredLength, "blog");
   const headingText = `${filteredLength} ${blogText} tagged with ${selectedTag}`;
 
@@ -41,7 +40,7 @@ const Blogs = ({ allBlogPosts }: BlogsProps) => {
         <div className="flex flex-col">
           {selectedTag && <SectionHeader heading={headingText} />}
           <ul className="flex flex-col gap-16 lg:min-w-[42rem] mr-4">
-            {allBlogPosts.map((blogPost) => (
+            {filteredBlogsBasedOnTag.map((blogPost) => (
               <BlogCard key={blogPost.title} {...blogPost} />
             ))}
           </ul>

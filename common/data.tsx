@@ -16,6 +16,7 @@ import {
   DietifyQuiz,
   Dietgram,
 } from "../assets/index";
+import { LinkButton } from "../components";
 
 export const timeLineData = {
   experience: [
@@ -327,3 +328,19 @@ export const skillsData = {
   Databases: ["MySQL", "PostgreSQL", "MongoDB", "Firebase"],
   Technologies: ["NodeJS", "Git", "Machine Learning"],
 };
+
+export const headerContentList = [
+  "I'm a Frontend Engineer and a B.Tech graduate in Information Technology from Mumbai, India.",
+  "I've been programming for more than 3 years and have developed my passion towards frontend development.",
+  <>
+    I&apos;ve developed many full-stack{" "}
+    <LinkButton href="/projects" target="">
+      projects
+    </LinkButton>{" "}
+    focusing on responsiveness, accessibility and performance.
+  </>,
+  <>
+    Check out my <LinkButton href="/blogs">blogs</LinkButton> where I post
+    tutorials and articles that spark my curiosity.
+  </>,
+];

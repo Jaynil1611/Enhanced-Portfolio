@@ -16,7 +16,7 @@ const TagLayout = ({ data, handleTagClick, selectedTag }: TagLayoutProps) => {
           return (
             <li
               key={tagName}
-              className={`m-1 px-3 py-1 border border-gray-500 rounded-full cursor-pointer tag__filters ${
+              className={`m-1 px-3 py-1 border border-gray-500 rounded-full cursor-pointer md:tag__filters ${
                 isSelected ? "tag__filters--selected" : ""
               }`}
               onClick={() => handleTagClick(tagName)}

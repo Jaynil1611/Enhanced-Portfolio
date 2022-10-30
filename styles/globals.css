@@ -126,6 +126,14 @@ code {
     background-color: var(--primary-color);
   }
 
+  .image__dimension {
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    max-height: 200px;
+    max-width: 200px;
+  }
+
   @media only screen and (max-width: 640px) {
     .line__clamp--project-content {
       min-height: initial;
