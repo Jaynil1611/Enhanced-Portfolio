@@ -86,8 +86,10 @@ export const getAllBlogPosts = () => {
     []
   );
   return allBlogPosts.sort((a, b) => {
-    if (a.publishedAt < b.publishedAt) return 1;
-    if (a.publishedAt > b.publishedAt) return -1;
+    const firstPublishedAt = new Date(a.publishedAt).getTime();
+    const secondPublishedAt = new Date(b.publishedAt).getTime();
+    if (firstPublishedAt < secondPublishedAt) return 1;
+    if (firstPublishedAt > secondPublishedAt) return -1;
     return 0;
   });
 };

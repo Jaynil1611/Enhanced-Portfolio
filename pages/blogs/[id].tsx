@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Head from "next/head";
 import dayjs from "dayjs";
-import Image from "next/image";
 import { serialize } from "next-mdx-remote/serialize";
 import { getAllBlogPostIds, getBlogPostData } from "../../common/utils";
 import { BlogPost, Layout } from "../../components";
@@ -12,8 +11,12 @@ import rehypeHighlight from "rehype-highlight";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 import rehypeCodeTitles from "rehype-code-titles";
-import imageSize from "rehype-img-size";
-import { CodeBlock } from "../../components/mdx-components";
+import rehypeImgSize from "rehype-img-size";
+import {
+  BlogImage,
+  CodeBlock,
+  InlineCode,
+} from "../../components/mdx-components";
 
 hljs.registerLanguage("javascript", javascript);
 
@@ -55,7 +58,7 @@ export async function getStaticProps({ params }: GetStaticProps) {
         rehypeHighlight,
         rehypeCodeTitles,
         //@ts-ignore
-        [imageSize, { dir: "public/static/images/blog" }],
+        [rehypeImgSize, { dir: "public" }],
       ],
     },
   });
@@ -65,12 +68,10 @@ export async function getStaticProps({ params }: GetStaticProps) {
   };
 }
 
-const defaultComponents = {
-  img: (props: any) => (
-    <span className="flex justify-center items-center">
-      <Image {...props} height="300px" width="500px" alt="" />
-    </span>
-  ),
+const components = {
+  img: BlogImage,
+  CodeBlock,
+  code: InlineCode,
 };
 
 const Blog = ({ blogPostData: { source, frontmatter } }: BlogProps) => {
@@ -92,10 +93,7 @@ const Blog = ({ blogPostData: { source, frontmatter } }: BlogProps) => {
         </p>
         <h1 className="text-4xl font-bold mb-8 mt-3">{frontmatter.title}</h1>
         <div className="prose max-w-none lg:prose-xl">
-          <MDXRemote
-            {...source}
-            components={{ ...defaultComponents, CodeBlock }}
-          />
+          <MDXRemote {...source} components={components} />
         </div>
       </div>
     </Layout>

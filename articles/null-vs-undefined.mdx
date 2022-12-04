@@ -1,0 +1,104 @@
+---
+title: 'NULL vs UNDEFINED in JS'
+publishedAt: '2020-12-13'
+tags: ["JavaScript"]
+excerpt: 'In this article, we are going to see the differences between null & undefined in javascript'
+---
+
+![Banner](static/images/blog/null_undefined.png)
+
+## NULL
+### What is null?
+> ### null is an assignment value. It can be assigned to a variable as a representation of no value:
+
+There are two features of null you should understand:
+- `null` is an empty or non-existent value.
+- `null` must be assigned.
+
+In the example below, we are assigning value to null.
+<CodeBlock>
+```javascript
+var x = null
+console.log(x);
+// null 
+```
+</CodeBlock>
+
+- null expresses a lack of identification, indicating that variable points to no object
+- When you assign null to a variable, you are declaring that this value is explicitly empty.
+
+## UNDEFINED
+### What is undefined?
+> ### Undefined usually means a variable has been declared, but not defined.
+- Another common scenario, where you will encounter an undefined is while trying to access a property of an object that doesn’t exist.
+
+<CodeBlock>
+```javascript
+var z = {};
+console.log(z.value);
+// undefined
+```
+</CodeBlock>
+
+- To summarize,
+   - An object is declared but not defined/initialized.
+   - Accessing an object property or an array index that does not exist.
+   - Calling a function, without it’s required function parameters.
+
+## What is similar?
+- Both `null`and `undefined `are primitive values in JavaScript. 
+- Another thing to note is that when comparing null and undefined they are equal. 
+<CodeBlock>
+```javascript
+null == undefined
+// true
+```
+</CodeBlock>
+
+- This is because both of them are considered falsy values in JavaScript.
+
+## Differences `null`vs. `undefined`
+- ### Arithmetic Operations
+> ### Another interesting difference to note is when arithmetic operations are performed with null vs. undefined.   
+> ### Arithmetic operations with a null value will result in integer value while any arithmetic operation with undefined will result in the value of the variable being changed to `NaN`.
+
+<CodeBlock>
+```javascript
+var x = 5 + null;
+console.log(x);
+// 5
+
+var y = 5 + undefined;
+console.log(y);
+// NaN 
+```
+</CodeBlock>
+
+- ## Equality
+- ### Typeof Null and Undefined
+- Interestingly enough, when using typeof to test null, it returns an object:
+<CodeBlock>
+```javascript
+console.log(typeof(undefined));  //"undefined"
+console.log(typeof(null));       //"object"
+```
+</CodeBlock>
+
+- ### Comparison Using Abstract and Strict Equality
+- Since these are different data types, if we compare them with strict equality ===, we get false.
+- But if we compare them with abstract equality ==, we get true.
+
+<CodeBlock>
+```javascript
+console.log(null === undefined)    //false
+console.log(null == undefined)     //true
+console.log(null !== undefined)    //true
+```
+</CodeBlock>
+
+ ## Summary
+- null is an assigned value. It means nothing.
+- undefined typically means a variable has been declared but not defined yet.
+- null and undefined are falsy values.
+- null and undefined are both primitives. However, an error shows that typeof null = object.
+- `null` !== `undefined` but `null` == `undefined`.
