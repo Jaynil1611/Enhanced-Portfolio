@@ -9,9 +9,9 @@ const BlogImage = (props: object) => {
       <Image
         {...props}
         src={imageSource}
-        width="500px"
-        height="500px"
-        objectFit="cover"
+        // width="500px"
+        // height="500px"
+        objectFit="contain"
         className="flex flex-1 justify-center"
         loading="lazy"
         alt=""

@@ -147,4 +147,8 @@ code {
       min-height: initial;
     }
   }
+
+  .iframe__alignment {
+    padding-top: 62.5%;
+  }
 }

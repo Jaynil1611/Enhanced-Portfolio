@@ -13,7 +13,9 @@ import javascript from "highlight.js/lib/languages/javascript";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypeImgSize from "rehype-img-size";
 import {
+  BlogIframe,
   BlogImage,
+  BlogLink,
   CodeBlock,
   InlineCode,
 } from "../../components/mdx-components";
@@ -72,6 +74,8 @@ const components = {
   img: BlogImage,
   CodeBlock,
   code: InlineCode,
+  BlogIframe,
+  a: BlogLink,
 };
 
 const Blog = ({ blogPostData: { source, frontmatter } }: BlogProps) => {
